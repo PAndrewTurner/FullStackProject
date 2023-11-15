@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Review - Data Status</title>
+    <link rel="icon" type="image/png" href="{% static 'images/ratereview1.png' %}" sizes="32x32">
+    <link rel="stylesheet" href="{% static 'css/selection_style.css' %}">
+</head>
+<body>
+    <div class="green-strip top-strip">Automation and Machine Learning Complete</div>
+    <div class="content">
+        <p>You current status on a loan is:</p>
+        {% if message %}
+        <div class="message">
+            <p>{{ message }} {{ score }}</p>
+        </div>
+        {% endif %}
+    </div>
+    
+    <div>
+        {% if message == "Approved" %}
+            <img src="{% static 'images/creditoffer2.png' %}" class="right-aligned-image" />
+        {% else %}
+            <p>No credit card offers at this time.</p>
+        {% endif %}
+    </div>
+    
+    <div>
+        <form action="/main/Credit_Profile_Request" method="get">
+            <label for="record_id">Administration Database Record ID:</label>
+            <input type="text" id="record_id" name="id">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    
+    <div class="green-strip bottom-strip"></div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "cardservices",
+  "version": "1.0.0",
+  "description": "Credit Card App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^10.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "scam0322"
+  },
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

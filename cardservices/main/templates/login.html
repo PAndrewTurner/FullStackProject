@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select User Type</title>
+</head>
+<body>
+    <h1>Login!</h1>
+    <form action="/cardservices/" method="post">
+        {% csrf_token %}
+        <input type="submit" name="user_type" value="New User">
+        <input type="submit" name="user_type" value="Returning User">
+    </form>
+</body>
+</html>

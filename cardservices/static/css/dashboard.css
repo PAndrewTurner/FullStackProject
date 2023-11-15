@@ -1,0 +1,85 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #D3EEF5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-button {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 50%; /* This makes it circular */
+    background-color: #4CAF50; /* Background color of the button */
+    color: white; /* Text color */
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.circle-button:hover {
+    background-color: #45a049; /* Slightly darker background on hover */
+}
+
+/* Additional styling to align text in the middle of the circle */
+.circle-button a {
+    display: block;
+    line-height: 20px; /* Adjust as per your padding and font size */
+}
+
+#logo {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+    animation: logo-fade-in 1s ease-out forwards;
+}
+
+header {
+    background-color: #007ACC;
+    color: white;
+    width: 100%
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Style the main content area */
+main {
+    padding: 20px;
+}
+
+/* Style the footer */
+footer {
+    background-color: #007ACC;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}

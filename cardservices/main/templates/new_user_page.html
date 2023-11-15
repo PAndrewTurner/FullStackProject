@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html>
+        <head>
+            <title>User Credit Form</title>
+        </head>
+        <body>
+            <h1>User Credit Form</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" required><br>
+        
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" required><br>
+        
+                <label for="credit_rate">Credit Rate:</label>
+                <select id="credit_rate" name="credit_rate" required>
+                    <option value="Poor">Poor</option>
+                    <option value="Good">Good</option>
+                    <option value="Great">Great</option>
+                </select><br>
+        
+                <input type="submit" value="Submit">
+            </form>
+        </body>
+        </html>

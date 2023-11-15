@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rate Review - Dashboard</title>
+    <link rel="icon" type="image/png" href="/static/images/ratereview1.png" sizes="32x32">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+        <!-- <div id="userNameDisplay">Loading user information...</div> -->
+
+        <script src="/static/js/dashboard.js"></script>
+   <header>
+        <nav>
+            <ul>
+                <li><a href="https://www.fool.com/the-ascent/credit-cards/landing/best-bonus-cards/?publisher=ta-cc-co-adw-na-bon-5-na-broad&campaign_group=641464847016&gad=1&gclid=Cj0KCQiAjMKqBhCgARIsAPDgWlz-TKSgNA25jbT0ffgnW_5ppkz3cGJHRMk9ilffIizLXSJR-NEBjggaAnseEALw_wcB">Credit Card Offers</a></li>
+                <li><a href="https://www.forbes.com/advisor/credit-cards/list-of-credit-card-companies/">Credit Card Companies</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">     
+            <div class="container">
+                <img src="{% static 'images/Rate_Review_2.png' %}" alt="Rate Review Logo" id="logo" />
+                <div id="userNameDisplay"></div>
+                <h1>Welcome to Your Dashboard</h1>
+                <div class="circle-button"><a href="/main/credit/">Provide Data for Review</a></div>
+                <div class="circle-button"><a href="/main/hello/">Sign Off</a></div>
+                <div id="stockPrices">
+                    <p>API - Visa Stock Price: <span id="visaPrice">Loading...</span></p>
+                </div>
+    </main>
+
+    <footer>
+      
+    </footer>
+</body>
+</html>

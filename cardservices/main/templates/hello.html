@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rate Review - Home</title>
+    <link rel="icon" type="image/png" href="/static/images/ratereview1.png" sizes="32x32">
+    <link rel="stylesheet" href="{% static 'css/stkyle.css' %}">
+    <!-- Include FirebaseUI CSS -->
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+
+    <!-- Firebase Initialization -->
+    <script type="module" src="{% static 'js/firebase-init.js' %}"></script>
+    <!-- FirebaseUI Script --> 
+
+    <script> 
+        const firebaseConfig = {
+            apiKey: "AIzaSyCmE7pclF-elhD_BybfUi5rbnoLopaCjos",
+            authDomain: "cardservices-c108a.firebaseapp.com",
+            projectId: "cardservices-c108a",
+            storageBucket: "cardservices-c108a.appspot.com",
+            messagingSenderId: "581581917182",
+            appId: "1:581581917182:web:4341531479eebf480c8eaf",
+            measurementId: "G-4PLDD26ZBG"
+        };  
+
+        // firebase.initializeApp(firebaseConfig);
+        // Firebase UI configuration
+        const app = firebase.initializeApp(firebaseConfig);
+        // if (firebase.analytics) {
+        //    firebase.analystics();
+        // }
+        var uiConfig = {
+            signInSuccessUrl: "/main/dashboard/", // URL to redirect to after sign in
+            signInOptions: [
+                 // List of OAuth providers you want to enable
+                 firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                 //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                 firebase.auth.EmailAuthProvider.PROVIDER_ID,
+           ],
+            //callbacks: {
+            //    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+            //        // User successfully signed in.
+            //        // Return type determines whether we continue the redirect automatically
+            //        // or whether we leave that to developer to handle.
+            //        return true;
+            //    }
+            //}
+        };
+
+        // Include FirebaseUI JS 
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        // The start method will wait until the DOM is loaded.
+        // If you want to bind the FirebaseUI to a button click, you can do so as well.
+        ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+</head>
+<body>
+    <header>
+        <img src="{% static 'images/Rate_Review_2.png' %}" alt="Rate Review Logo" id="logo" />
+        <h1>Welcome to Rate Review</h1>
+        <!-- <button id="loginButton">Login to Rate Review</button> -->
+        <div id="firebaseui-auth-container"></div> <!-- Where the Firebase UI will be rendered -->
+        <div id="login-container">
+            <h1>Existing User Login</h1>
+            <input type="email" id="email" placeholder="Email" autocomplete="e-mail">
+            <input type="password" id="password" placeholder="Password" autocomplete="passoword">
+            <button id="loginButton">Login</button>
+            <div id="error-message"></div>
+            <button id="signOutButton">Sign Out</button>
+        </div>
+        <!-- <a href="/main/credit/"><button id="creditButton">Credit</button></a> -->
+    </header>
+
+    <main>
+        <section class="rate-review-plan">
+            <div class="content-flex-container">
+                <div class="text-content">
+                    <h2>Our Plan at Rate Review</h2>
+                    <p>
+                        At Rate Review, we specialize in analyzing your credit card debt to help you make smarter financial decisions. We take a deep dive into your current credit card usage and expenditures, and then provide tailored suggestions for credit cards that better align with your financial habits and goals. Our recommendations are based on several key factors, including:
+                    </p>
+                    <ul>
+                        <li>Interest rates</li>
+                        <li>Sign-up bonuses</li>
+                        <li>Annual fees</li>
+                        <li>Length of promotional rates</li>
+                    </ul>
+                    <p>
+                        Our goal is to help you find credit card options that not only fit your spending patterns but also offer you the best financial benefits. Let us help you optimize your credit card usage and reduce your financial burden.
+                    </p>
+                </div>
+                <div class="image-content">
+                    <img src="{% static 'images/credit_transfer.jpeg' %}" alt="Creit carrd transfers" class="rate-review-image">
+                </div>
+            </div>
+        </section>
+   
+        <section class="educational-content">
+            <h2>Educational Articles on Credit Card Rates</h2>
+            <ul>
+                <li><a href="https://www.moneyfit.org/how-credit-cards-work/?gclid=CjwKCAiAxreqBhAxEiwAfGfndFjUMMd1FT2TeBlPpM21mDuOzMFGDNgMOeqmTMxk7U0CpZHs9KSxORoCKOoQAvD_BwE">Understanding Credit Card Interest Rates</a></li>
+                <li><a href="https://wallethub.com/best-credit-card-rates">How to Get the Best Credit Card Rate</a></li>
+                <li><a href="https://www.moneygeek.com/credit-cards/reviews/">Credit Card Rate Reviews: Top Cards Compared</a></li>
+                <li><a href="https://www.experian.com/blogs/ask-experian/why-do-people-with-higher-credit-scores-get-lower-interest-rates/#:~:text=People%20with%20higher%20credit%20scores,always%20looking%20to%20minimize%20risk.">The Impact of Your Credit Score on Interest Rates</a></li>
+            </ul>
+        </section>
+    </main>   
+</body>
+</html>

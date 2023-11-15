@@ -1,0 +1,250 @@
+/* General styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    position: relative;
+    min-height: 100vh;
+}
+
+header {
+    background-image: url('/static/images/backtech.png'); /* Update with the correct path to the image */
+    background-size: cover; /* Cover the entire header area */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the image */
+    color: #fff; /* Adjust text color if needed */
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Logo styles */
+#logo {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+    animation: logo-fade-in 1s ease-out forwards;
+}
+
+@keyframes logo-fade-in {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    margin: 0;
+    text-shadow: 1px 1px 2px #000;
+}
+
+main {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Button styling */
+button {
+    background-color: #008cba;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background-color: #005f73;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.content-flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; /* Add space between elements */
+}
+
+.text-content, .image-content, .rate-review-image, .educational-content, .rate-review-plan {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.text-content:hover, .image-content:hover, .rate-review-image:hover, .educational-content:hover, .rate-review-plan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Button styling */
+button {
+    background-color: #008cba; /* Blue */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.content-flex-container {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: space-between; /* Space between the text and the image */
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+}
+
+.text-content {
+    flex: 1; /* Flex grow */
+    padding-right: 20px; /* Space between the text and the image */
+}
+
+.image-content {
+    flex-basis: 50%; /* Take up half of the container */
+    text-align: center; /* Center the image */
+}
+
+.rate-review-image {
+    max-width: 100%; /* Full width of its parent */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
+@media screen and (max-width: 768px) {
+    .content-flex-container {
+        flex-direction: column; /* Stack them on top of each other on smaller screens */
+    }
+    .image-content {
+        flex-basis: 100%; /* Image takes full width on small screens */
+        margin-top: 20px; /* Space between text and image */
+    }
+}
+
+
+button:hover {
+    background-color: #005f73; /* Darker blue */
+}
+
+/* Educational content section */
+.educational-content {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.educational-content h2 {
+    color: #333;
+}
+
+.educational-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.educational-content li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.educational-content li a {
+    color: #008cba;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.educational-content li a:hover {
+    color: #005f73;
+}
+
+.rate-review-plan {
+    background-color: #f8f8f8; /* Light gray background for contrast */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.rate-review-plan h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.rate-review-plan p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.rate-review-plan ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.rate-review-plan ul li {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed; /* Change to fixed to keep it at the bottom */
+    bottom: 0;
+    width: 100%;
+}
+
+.image-section {
+    text-align: center; /* Center the image */
+    padding: 20px;
+}
+
+.image-section img {
+    max-width: 100%; /* Ensure the image is responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: adds rounded corners to the image */
+}

@@ -1,0 +1,61 @@
+<html>
+<body>
+    <h1>Welcome to My Awesome App</h1>
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader">Loading...</div>
+<!-- Add Firebase SDK -->
+
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+<!-- ... Other Firebase services ... -->
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCmE7pclF-elhD_BybfUi5rbnoLopaCjos",
+      authDomain: "cardservices-c108a.firebaseapp.com",
+      projectId: "cardservices-c108a",
+      storageBucket: "cardservices-c108a.appspot.com",
+      messagingSenderId: "581581917182",
+      appId: "1:581581917182:web:4341531479eebf480c8eaf",
+      measurementId: "G-4PLDD26ZBG"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    // Initialize the FirebaseUI Widget using Firebase.
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+    ui.start('#firebaseui-auth-container', {
+    signInOptions: [
+        firebase.auth.EmailAuthProvider.PROVIDER_ID
+    ],
+    // Other config options...
+    });
+    
+    ui.start('#firebaseui-auth-container', {
+    signInOptions: [
+    {
+      provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+      requireDisplayName: false
+    }
+    ]  
+    });
+
+
+  </script>
+
+</body>
+</html>

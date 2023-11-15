@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rate Review - Credit Profile Form</title>
+    <link rel="icon" type="image/png" href="/static/images/ratereview1.png" sizes="32x32">
+    <link rel="stylesheet" href="{% static 'css/form_styles.css' %}">
+</head>
+
+<body>
+     
+            <div class="form-container"> 
+                <img src="{% static 'images/Rate_Review_2.png' %}" alt="Rate Review Logo" id="logo" />
+                <h2>Credit Profile Form</h2>
+            </div>
+            <P>
+            <form method="post" action="/main/credit_profile_form/">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_no_of_dependents">Number of Dependents:</label>
+                {{ form.no_of_dependents.errors }}
+                <input type="number" name="no_of_dependents" id="id_no_of_dependents" required>
+            </div>
+            <div class="form-group">
+                <label for="id_education">Education:</label>
+                {{ form.education.errors }}
+                <select name="education" id="id_education" required>
+                    <option value="0">High School</option>
+                    <option value="1">College</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="id_self_employed_yes">Self Employed - Yes:</label>
+                <input type="radio" name="self_employed" id="id_self_employed_yes" value="Yes" required>
+                <label for="id_self_employed_no">Self Employed - No:</label>
+                <input type="radio" name="self_employed" id="id_self_employed_no" value="No">
+            </div>
+            <div class="form-group">
+                <label for="id_annual_income">Annual Income:</label>
+                {{ form.annual_income.errors }}
+                <input type="number" step="0.01" name="annual_income" id="id_annual_income" required>
+            </div>
+            <div class="form-group">
+                <label for="id_loan_amount">Loan Amount:</label>
+                {{ form.loan_amount.errors }}
+                <input type="number" step="0.01" name="loan_amount" id="id_loan_amount" required>
+            </div>
+            <div class="form-group">
+                <label for="id_credit_score">Credit Score:</label>
+                {{ form.credit_score.errors }}
+                <input type="number" name="credit_score" id="id_credit_score" required>
+            </div>
+            <div class="form-group">
+                <label for="id_res_assets">Real Estate Value:</label>
+                {{ form.res_assets.errors }}
+                <input type="number" step="0.01" name="res_assets" id="id_res_assets" required>
+            </div>
+            <div class="form-group">
+                <label for="id_com_assets">Commercial Assets:</label>
+                {{ form.com_assets.errors }}
+                <input type="number" step="0.01" name="com_assets" id="id_com_assets" required>
+            </div>
+            <div class="form-group">
+                <label for="id_bank_assets">Bank Assets:</label>
+                {{ form.bank_assets.errors }}
+                <input type="number" step="0.01" name="bank_assets" id="id_bank_assets" required>
+            </div>
+            <div class="form-group">
+                <label for="id_total_assets">Total Assets:</label>
+                {{ form.total_assets.errors }}
+                <input type="number" step="0.01" name="total_assets" id="id_total_assets" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+    </html>
+    
